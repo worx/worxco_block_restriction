@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ */
+function worxco_block_restriction_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'block_admin_configure':
+      global $user;
+      $uid = $user->uid;
+      $form['regions']['#access'] = $uid == 1 ? TRUE : FALSE;
+      $form['visibility_title']['#access'] = $uid == 1 ? TRUE : FALSE;
+      $form['visibility']['#access'] = $uid == 1 ? TRUE : FALSE;
+      break;
+  }
+}

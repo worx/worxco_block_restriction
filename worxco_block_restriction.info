@@ -1,0 +1,5 @@
+name = Worxco Block Restriction
+description = Add restrictions to the block form. Disables "Region Settings" and "Visibility Settings".
+core = 7.x
+package = Worx Components
+version = 7.x-1.x
